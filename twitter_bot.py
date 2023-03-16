@@ -6,5 +6,3 @@ auth.set_access_token("your_access_token", "your_access_token_secret")
 
 # Create an instance of the Tweepy API
 api = tweepy.API(auth)
-
-
