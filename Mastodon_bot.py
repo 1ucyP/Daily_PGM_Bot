@@ -17,6 +17,6 @@ with open('Spell_Fragments.txt', 'r') as f:
 #select random line
 toot = random.choice(toot)
 
-#toot random selection 
+#toot random selection oonce a day 
 mastodon.status_post(toot)
-
+sleep(86400)
