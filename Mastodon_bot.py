@@ -10,13 +10,17 @@ mastodon = Mastodon(
     api_base_url = 'https://archaeo.social/'
 )
 
-#open file and read all lines
-with open('Spell_Fragments.txt', 'r') as f:
-    toot = f.readlines()
+def send_toot(text):
+    with open(text, 'r', encoding='UTF-8') as file:
+        line = file.readlines()
+        for x in text:
+            mastodon.status_post(random.choice(line))
+            sleep(5)
+            
+def main():
+    mastodon.status_post(send_toot('Spell_Fragments.txt'))
 
-#select random line
-toot = random.choice(toot)
+if __name__ == "__main__":
+    main()
+    
 
-#toot random selection oonce a day 
-mastodon.status_post(toot)
-sleep(86400)
