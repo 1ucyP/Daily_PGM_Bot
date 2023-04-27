@@ -15,7 +15,7 @@ def send_toot(text):
         line = file.readlines()
         for x in text:
             mastodon.status_post(random.choice(line))
-            sleep(5)
+            sleep(86400)
             
 def main():
     mastodon.status_post(send_toot('Spell_Fragments.txt'))
